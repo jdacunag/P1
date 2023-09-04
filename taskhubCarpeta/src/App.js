@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Error404 from "./containers/errors/Error404";
 import Home from "./containers/pages/Home";
+import TaskList from "./components/TaskList";
 import store from "./store";
 import { Provider } from "react-redux";
 
@@ -13,7 +14,7 @@ function App() {
 
         <Route path="*" element={<Error404/>}/>
 
-
+        <Route path="/tasks" element={<TaskList/>}/>
         <Route path="/" element={<Home />}/>
       </Routes>
     </Router>
