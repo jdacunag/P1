@@ -8,6 +8,7 @@ export function TaskCard( { task } ){
         <br />
         <h2> <p>{task.fecha_creacion}</p></h2>
         <h2> {task.estado}</h2>
+        <br />
         <hr/>
             </div>
     )

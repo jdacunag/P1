@@ -5,7 +5,7 @@ function Home() {
 
     return(
         <div>
-            home
+            home 34
         </div>
 
     )
