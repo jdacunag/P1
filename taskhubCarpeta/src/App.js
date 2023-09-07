@@ -4,7 +4,7 @@ import Home from "./containers/pages/Home";
 import TaskList from "./components/TaskList";
 import store from "./store";
 import { Provider } from "react-redux";
-
+import VerProyectos from "./containers/pages/VerProyectos";
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
   
         <Route path="/tasks" element={<TaskList/>}/>
         <Route path="/" element={<Home/>}/>
+        <Route path="/VerProyectos" element={<VerProyectos/>}/>
       </Routes>
     </Router>
     </Provider>

@@ -8,6 +8,7 @@ import titulo2   from  "../../components/Titulo2"
 
 
 
+
 function Home() {
 
     return(
@@ -22,12 +23,11 @@ function Home() {
           <div>
             <div style={CuadroDeBotones}>
             </div>
-            <button style={BotonVerProyectos}>Ver <br /> proyectos</button>
+            <button style={BotonVerProyectos} onClick = {"/this.VerProyectos"}>Ver <br /> proyectos</button>
             <button style={BotonNuevoProyecto}>Nuevo <br /> Proyecto</button>
           </div>
         </div>
       </div>
-  
     )
     
 }
