@@ -1,4 +1,4 @@
-import Logo1 from  '../images/Logotaskhub.png';
+import Logo1 from  '../images/Piramide';
 
 export const Logo = {
 
@@ -8,9 +8,6 @@ export const Logo = {
     position: 'relative',
     top: '100px',
     left: '0px',
-    //importamos el logo de taskhub
-    backgroundImage: 'url('+Logo1+')',
-
 
 }
 

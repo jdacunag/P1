@@ -1,13 +1,21 @@
-import BotonNuevoProyecto from "../../components/BotonNuevoProyecto"
-import titulo from "../../components/Titulo"
-import BotonVerProyectos from "../../components/BotonVerProyectos"
-import CuadroDeBotones from "../../components/CuadroDeBotones"
-import CentrarTexto  from "../../components/CentrarTexto"
-import Fondo  from "../../components/Fondo"
-import titulo2   from  "../../components/Titulo2"
+import React from 'react';
+import BotonNuevoProyecto from "../../components/Home/BotonNuevoProyecto"
+import titulo from "../../components/Home/Titulo"
+import BotonVerProyectos from "../../components/Home/BotonVerProyectos"
+import CuadroDeBotones from "../../components/Home/CuadroDeBotones"
+import CentrarTexto  from "../../components/Home/CentrarTexto"
+import Fondo  from "../../components/Home/Fondo"
+import titulo2   from  "../../components/Home/Titulo2"
 
 
 
+function VerProyectos() {
+  window.location.href = "/VerProyectos";
+}
+
+function NuevoProyecto() {
+  window.location.href = "/NuevoProyecto";
+}
 
 function Home() {
 
@@ -23,8 +31,8 @@ function Home() {
           <div>
             <div style={CuadroDeBotones}>
             </div>
-            <button style={BotonVerProyectos} onClick = {"/this.VerProyectos"}>Ver <br /> proyectos</button>
-            <button style={BotonNuevoProyecto}>Nuevo <br /> Proyecto</button>
+            <button style={BotonVerProyectos} onClick={VerProyectos}>Ver <br /> proyectos</button>
+            <button style={BotonNuevoProyecto} onClick={NuevoProyecto} >Nuevo <br /> Proyecto</button>
           </div>
         </div>
       </div>

@@ -1,8 +1,10 @@
+import react from 'react';
+
 function VerProyectos(){
 
     return(
         <div>
-            <h1>Ver Proyectos</h1>
+            Ver Proyectos
         </div>
     )
 

@@ -5,6 +5,8 @@ import TaskList from "./components/TaskList";
 import store from "./store";
 import { Provider } from "react-redux";
 import VerProyectos from "./containers/pages/VerProyectos";
+import NuevoProyecto from "./containers/pages/NuevoProyecto";
+import Login from "./containers/pages/Login";
 
 function App() {
 
@@ -15,10 +17,11 @@ function App() {
       <Routes>
   
         <Route path="*" element={<Error404/>}/>
-  
         <Route path="/tasks" element={<TaskList/>}/>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/Home" element={<Home/>}/>
         <Route path="/VerProyectos" element={<VerProyectos/>}/>
+        <Route path="/NuevoProyecto" element={<NuevoProyecto/>}/>
+        <Route path="/" element={<Login/>}/>
       </Routes>
     </Router>
     </Provider>

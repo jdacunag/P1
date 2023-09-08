@@ -1,21 +1,22 @@
-export const CuadroDeBotones = {
+export const CuadroTexto = {
 
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
-    top: '700px',
-    left: '-559px',
+    top: '600px',
+    left: '960px',
     color : 'white',
-    backgroundImage: 'url(https://fondosmil.com/fondo/13706.jpg)', // Reemplaza con la ruta de tu imagen
     borderRadius: '30px',
     width: '600px',
-    height: '400px',
+    height: '500px',
     fontSize: '30px',
     fontWeight: 'bold',
     textShadow: '2px 2px 4px #000000', // Añade sombra al texto
-    opacity: '0.5',
+    opacity: '0.6',
+    border: 'solid 3px white',
+    backgroundColor: 'black',
 
 }
 
-export default CuadroDeBotones;
+export default CuadroTexto;
