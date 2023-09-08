@@ -7,8 +7,8 @@ export const Fondo = {
     backgroundRepeat: 'no-repeat', // Evita la repetición de la imagen de fondo
     height: '100vh', // Ajusta la altura como desees
     width: '100vw', // Ajusta el ancho como desees
-        
-        
+    backgroundPosition: 'center',
+    position: 'fixed',
     
 }
 

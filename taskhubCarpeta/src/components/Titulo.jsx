@@ -9,7 +9,7 @@ export const titulo={
   textShadow: '2px 2px 4px #000000', // Añade sombra al texto
   textAlign: 'center',
   //bajar un poco el texto
-  marginTop: '150px',
+  marginTop: '200px',
 
 
 }

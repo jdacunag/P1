@@ -14,7 +14,7 @@ export const CuadroDeBotones = {
     fontSize: '30px',
     fontWeight: 'bold',
     textShadow: '2px 2px 4px #000000', // Añade sombra al texto
-    opacity: '0.3',
+    opacity: '0.5',
 
 }
 
