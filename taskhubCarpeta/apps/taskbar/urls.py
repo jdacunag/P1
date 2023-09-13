@@ -19,4 +19,5 @@ urlpatterns = [
     path('docs/', include_docs_urls(title="tasks API")),
     path("api/v1/", include(routerProyectos.urls)), 
     path("api/v1/", include(routerUsuarios.urls)),
+    path("api/v1/User/", views.UserAuthentication,  name ='usersAuth'),
 ]

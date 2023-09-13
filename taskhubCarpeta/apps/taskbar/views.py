@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status, permissions
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import authenticate, login
 from .models import tasks, Proyecto
 from .serializer import *
-
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+import json
 
 def pruebametod(request):
     return render(request, 'prueba.html')
@@ -18,6 +20,24 @@ class vistaProject(viewsets.ModelViewSet):
     queryset = Proyecto.objects.all()
 class vistaUser(viewsets.ModelViewSet):
     serializer_class = serializerUsers
-    queryset = Proyecto.objects.all()
+    queryset = usuario.objects.all()
 
+
+@method_decorator(csrf_exempt, name='dispatch')  
+
+def UserAuthentication(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username')
+        password = data.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            # El usuario está autenticado correctamente
+            login(request, user)
+            return JsonResponse({'boolean': 'true'})
+        else:
+            # La autenticación falló
+            return JsonResponse({'boolean': 'false'})
+    else:
+        return JsonResponse({'mensaje': 'Método no permitido1'}, status=405)
 # Create your views here.
