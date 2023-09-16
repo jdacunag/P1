@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import VerProyectos from "./containers/pages/VerProyectos";
 import NuevoProyecto from "./containers/pages/NuevoProyecto";
 import Login from "./containers/pages/Login";
+import Registro from "./containers/pages/Registro";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/VerProyectos" element={<VerProyectos/>}/>
         <Route path="/NuevoProyecto" element={<NuevoProyecto/>}/>
         <Route path="/" element={<Login/>}/>
+        <Route path="/Registro" element={<Registro/>}/>
       </Routes>
     </Router>
     </Provider>

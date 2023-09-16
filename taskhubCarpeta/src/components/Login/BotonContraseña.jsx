@@ -13,7 +13,7 @@ export const BotonContraseña = {
     height: '100px',
     fontSize: '30px',
     fontWeight: 'bold',
-    right: '63px',
+    right: '-45px',
 
 }
 

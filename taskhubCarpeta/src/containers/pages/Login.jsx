@@ -7,10 +7,15 @@ import BotonContraseña from "../../components/Login/BotonContraseña";
 import LoginPassword from "../../components/Login/LoginPassword";
 import { useForm } from "react-hook-form";
 import { verificarUser } from "../../api/task.api"; 
+import Registro from "../../components/Login/RegistroStyle";
 import axios from 'axios'
 
 function iraHome() {
   window.location.href = "/Home";
+}
+
+function iraRegistro(){
+    window.location.href = "/Registro";
 }
 
 function Login() {
@@ -32,12 +37,15 @@ function Login() {
   return (
     <div style={Fondo}>
         <form onSubmit={onSubmit}>
-        <div>
+        
           <div style={CuadroTexto}>
             <div style={BotonUsuario}>
             <input type="text" placeholder="username" name="username"
                {...register("username", {required: true})} style={LoginUser}/>
-            </div>
+                <button style={Registro} onClick={iraRegistro}>
+                    ¿No tienes cuenta? Registrate
+                </button>
+            
             <div style={BotonContraseña}>
               <input type="text" placeholder="password" name="password"
                {...register("password", {required: true}) } style = {LoginPassword} />

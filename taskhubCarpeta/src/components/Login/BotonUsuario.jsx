@@ -13,7 +13,7 @@ export const BotonUsuario = {
     height: '100px',
     fontSize: '30px',
     fontWeight: 'bold',
-    left: '37px',
+    left: '145px',
 
 }
 
