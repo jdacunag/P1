@@ -7,18 +7,41 @@ import CentrarTexto  from "../../components/Home/CentrarTexto"
 import Fondo  from "../../components/Home/Fondo"
 import titulo2   from  "../../components/Home/Titulo2"
 
+function obtenerCookie(nombre) {
+  const cookies = document.cookie.split('; ');
+  for (const cookie of cookies) {
+    const [key, value] = cookie.split('=');
+    if (key === nombre) {
+      return decodeURIComponent(value);
+    }
+  }
+  return null; // Si la cookie no se encuentra
+}
 
-
-function VerProyectos() {
+function  VerProyectos() {
+  const id = obtenerCookie("id");
+  document.cookie = `id=${id}`;
   window.location.href = "/VerProyectos";
+
 }
 
 function NuevoProyecto() {
+  const id = obtenerCookie("id");
+  document.cookie = `id=${id}`;
   window.location.href = "/NuevoProyecto";
+  
 }
 
 function Home() {
-
+  
+  // Obtener el valor de la cookie "id"
+  const id = obtenerCookie("id");
+  
+  if (id) {
+    console.log("ID recuperado:", id);
+  } else {
+    console.log("La cookie 'id' no se encontró o está vacía.");
+  }
     return(
         <div style={Fondo}>
         <div style={CentrarTexto}>

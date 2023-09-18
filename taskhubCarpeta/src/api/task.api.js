@@ -16,7 +16,7 @@ const usersApi = axios.create({
 
 
 
-export const getAllProjects = () => projectApi.get('/')
+export const getAllProjects = (id) => projectApi.get('/?usuario='+ id )
 export const createProject = (project) =>  projectApi.post('/', project)
 
 export const getAllTasks = () => tasksApi.get('/')

@@ -11,7 +11,10 @@ import Registro from "../../components/Login/RegistroStyle";
 import axios from 'axios'
 import Titulo from "../../components/Login/Titulo";
 
-function iraHome() {
+
+
+function iraHome(id) {
+  document.cookie = `id=${id}`;
   window.location.href = "/Home";
 }
 
@@ -24,8 +27,8 @@ function Login() {
   const onSubmit = handleSubmit( async(data) => {
     try{ 
     const res = await verificarUser(data)
-    if(res.boolean == "true") {
-      iraHome();
+    if(res.boolean === "true") {
+      iraHome(res.id);
     }else{
       console.log(res.boolean)
       console.log("error")

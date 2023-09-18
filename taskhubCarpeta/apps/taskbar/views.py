@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import json
-
+from rest_framework.authtoken.models import Token
 def pruebametod(request):
     return render(request, 'prueba.html')
 
@@ -18,25 +18,31 @@ class vistaTask(viewsets.ModelViewSet):
 class vistaProject(viewsets.ModelViewSet):
     serializer_class = serializerProyecto
     queryset = Proyecto.objects.all()
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        usuario = self.request.query_params.get('usuario', None)
+        if usuario:
+            queryset = queryset.filter(usuario=usuario)
+        return queryset
 class vistaUser(viewsets.ModelViewSet):
     serializer_class = serializerUsers
     queryset = usuario.objects.all()
 
 
 @method_decorator(csrf_exempt, name='dispatch')  
-
 def UserAuthentication(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         username = data.get('username')
         password = data.get('password')
         user = authenticate(request, username=username, password=password)
+        
         if user is not None:
-            # El usuario está autenticado correctamente
             login(request, user)
-            return JsonResponse({'boolean': 'true'})
+            return JsonResponse({'boolean': 'true',
+                                 "id": user.id})
         else:
-            # La autenticación falló
             return JsonResponse({'boolean': 'false'})
     else:
         return JsonResponse({'mensaje': 'Método no permitido1'}, status=405)
