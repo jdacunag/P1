@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { verificarUser } from "../../api/task.api"; 
 import Registro from "../../components/Login/RegistroStyle";
 import axios from 'axios'
+import Titulo from "../../components/Login/Titulo";
 
 function iraHome() {
   window.location.href = "/Home";
@@ -37,24 +38,25 @@ function Login() {
   return (
     <div style={Fondo}>
         <form onSubmit={onSubmit}>
-        
           <div style={CuadroTexto}>
+            <div style={Titulo}>
+              <p>Bienvenido</p>
+            </div>
             <div style={BotonUsuario}>
             <input type="text" placeholder="username" name="username"
                {...register("username", {required: true})} style={LoginUser}/>
+            </div>
                 <button style={Registro} onClick={iraRegistro}>
                     ¿No tienes cuenta? Registrate
                 </button>
-            
             <div style={BotonContraseña}>
               <input type="text" placeholder="password" name="password"
                {...register("password", {required: true}) } style = {LoginPassword} />
             </div>
-          </div>
+          
           <button style={BotonIngreso} type="submit">
             Ingreso
           </button>
-          
         </div>
         </form>
     </div>

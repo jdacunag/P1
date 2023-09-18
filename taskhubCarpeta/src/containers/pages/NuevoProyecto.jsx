@@ -1,11 +1,12 @@
 
 
+
 function NuevoProyecto(){
 
     return(
-        <div>
-            NuevoProyecto   
-        </div>
+       
+        <p>Nuevo Protecto</p>
+           
     )
 
 }

@@ -1,14 +1,14 @@
 export const RegistroStyle = {
 
-    top: '100px',
+    top: '550px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
+    position: 'absolute',
     color: 'white',
     fontFamily: 'sans-serif',
     fontSize: '15px',
-    right: '105px',
+    left: '190px',
     fontWeight: 'bold',
 
 

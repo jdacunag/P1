@@ -1,6 +1,6 @@
-export const BotonContraseña = {
+export const BotonUsuario = {
 
-    
+    top: '250px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -11,11 +11,10 @@ export const BotonContraseña = {
     borderRadius: '30px',
     width: '100px',
     height: '100px',
-    fontSize: '30px',
+    fontSize: '25px',
     fontWeight: 'bold',
     left: '250px',
-    top: '350px',
 
 }
 
-export default BotonContraseña;
+export default BotonUsuario;

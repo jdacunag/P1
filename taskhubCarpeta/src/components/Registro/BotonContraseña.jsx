@@ -11,7 +11,7 @@ export const BotonContraseña = {
     borderRadius: '30px',
     width: '100px',
     height: '100px',
-    fontSize: '30px',
+    fontSize: '25px',
     fontWeight: 'bold',
     left: '250px',
     top: '350px',

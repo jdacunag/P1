@@ -1,4 +1,4 @@
-export const FondoR = {
+export const Fondo = {
 
     backgroundImage: 'url(https://fondosmil.com/fondo/13706.jpg)', // Reemplaza con la ruta de tu imagen
     backgroundSize: 'cover', // Ajusta el tamaño de la imagen de fondo
@@ -13,4 +13,4 @@ export const FondoR = {
 
 }
 
-export default FondoR;
+export default Fondo;

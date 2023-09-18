@@ -7,7 +7,7 @@ export const BotonIngreso ={
     alignItems: 'center',
     height: '5vh',
     position: 'absolute',
-    top: '580px',
+    top: '600px',
     left: '175px',
     button: 'white',
     bottom: '10px',

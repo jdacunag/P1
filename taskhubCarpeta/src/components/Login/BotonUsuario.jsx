@@ -1,10 +1,10 @@
 export const BotonUsuario = {
 
-    top: '-130px',
+    top: '250px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
+    position: 'absolute',
     color: 'black',
     fontFamily: 'sans-serif',
     fontSize: '10px',
@@ -13,7 +13,7 @@ export const BotonUsuario = {
     height: '100px',
     fontSize: '30px',
     fontWeight: 'bold',
-    left: '145px',
+    left: '250px',
 
 }
 
