@@ -2,28 +2,27 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Error404 from './containers/errors/Error404';
 import Home from './containers/pages/Home';
 import TaskList from './components/TaskList';
-import store from './store';
-import { Provider } from 'react-redux';
 import VerProyectos from './containers/pages/VerProyectos';
 import NuevoProyecto from './containers/pages/NuevoProyecto';
 import Login from './containers/pages/Login';
 import Registro from './containers/pages/Registro';
+import { UserIdProvider } from './hooks/useSession';
 
 function App() {
     return (
-        <Provider store={store}>
+        <UserIdProvider>
             <Router>
                 <Routes>
                     <Route path="*" element={<Error404 />} />
                     <Route path="/tasks" element={<TaskList />} />
-                    <Route path="/Home" element={<Home />} />
-                    <Route path="/VerProyectos" element={<VerProyectos />} />
-                    <Route path="/NuevoProyecto" element={<NuevoProyecto />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/verproyectos" element={<VerProyectos />} />
+                    <Route path="/nuevoproyecto" element={<NuevoProyecto />} />
                     <Route path="/" element={<Login />} />
-                    <Route path="/Registro" element={<Registro />} />
+                    <Route path="/registro" element={<Registro />} />
                 </Routes>
             </Router>
-        </Provider>
+        </UserIdProvider>
     );
 }
 

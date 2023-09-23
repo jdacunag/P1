@@ -1,23 +1,9 @@
-function obtenerCookie(nombre) {
-    const cookies = document.cookie.split('; ');
-    for (const cookie of cookies) {
-        const [key, value] = cookie.split('=');
-        if (key === nombre) {
-            return decodeURIComponent(value);
-        }
-    }
-    return null;
-}
+import { useSession } from '../../hooks/useSession';
 
 function NuevoProyecto() {
-    const id = obtenerCookie('id');
+    const { userId } = useSession(); 
 
-    if (id) {
-        console.log('ID recuperado:', id);
-    } else {
-        console.log("La cookie 'id' no se encontró o está vacía.");
-    }
-    console.log('ID recuperado:', id);
+
     return <p>Nuevo Protecto</p>;
 }
 

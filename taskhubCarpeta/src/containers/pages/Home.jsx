@@ -7,40 +7,14 @@ import CentrarTexto from '../../components/Home/CentrarTexto';
 import Fondo from '../../components/Home/Fondo';
 import titulo2 from '../../components/Home/Titulo2';
 import { useSession } from '../../hooks/useSession';
+import { useNavigate, Link } from 'react-router-dom';
 
-function obtenerCookie(nombre) {
-    const cookies = document.cookie.split('; ');
-    for (const cookie of cookies) {
-        const [key, value] = cookie.split('=');
-        if (key === nombre) {
-            return decodeURIComponent(value);
-        }
-    }
-    return null; // Si la cookie no se encuentra
-}
 
-function VerProyectos() {
-    const id = obtenerCookie('id');
-    document.cookie = `id=${id}`;
-    window.location.href = '/VerProyectos';
-}
-
-function NuevoProyecto() {
-    const id = obtenerCookie('id');
-    document.cookie = `id=${id}`;
-    window.location.href = '/NuevoProyecto';
-}
 
 function Home() {
-    const { userId } = useSession();
-    const id = obtenerCookie('id');
+    const { userId, setSecureid  } = useSession();
 
-    if (id) {
-        console.log('ID recuperado:', id);
-        console.log(userId);
-    } else {
-        console.log("La cookie 'id' no se encontró o está vacía.");
-    }
+    console.log(userId);
     return (
         <div style={Fondo}>
             <div style={CentrarTexto}>
@@ -53,12 +27,12 @@ function Home() {
                 </div>
                 <div>
                     <div style={CuadroDeBotones}></div>
-                    <button style={BotonVerProyectos} onClick={VerProyectos}>
-                        Ver <br /> proyectos
-                    </button>
-                    <button style={BotonNuevoProyecto} onClick={NuevoProyecto}>
-                        Nuevo <br /> Proyecto
-                    </button>
+                    <Link to="/verproyectos" style={BotonVerProyectos}>
+                    Ver <br /> proyectos
+                    </Link>
+                    <Link to="/nuevoproyecto" style={BotonNuevoProyecto}>
+                    Nuevo <br /> proyectos
+                    </Link>
                 </div>
             </div>
         </div>
