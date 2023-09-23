@@ -1,9 +1,4 @@
-
-
-export const BotonVerProyectos ={
-
-    
-        
+export const BotonVerProyectos = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -14,12 +9,9 @@ export const BotonVerProyectos ={
     button: 'white',
     bottom: '10px',
     fontSize: '35px',
-    color : 'white',
+    color: 'white',
     width: '247.22px',
     fontWeight: 'bold',
-        
-    
-    
-}
+};
 
 export default BotonVerProyectos;

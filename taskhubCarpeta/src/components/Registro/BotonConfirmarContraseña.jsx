@@ -1,6 +1,4 @@
 export const BotonConfirmarContraseña = {
-
-    
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -15,7 +13,6 @@ export const BotonConfirmarContraseña = {
     fontWeight: 'bold',
     left: '250px',
     top: '450px',
-
-}
+};
 
 export default BotonConfirmarContraseña;

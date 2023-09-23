@@ -1,12 +1,11 @@
 export const CuadroTexto = {
-
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
     top: '400px',
     left: '960px',
-    color : 'white',
+    color: 'white',
     borderRadius: '30px',
     width: '600px',
     height: '730px',
@@ -16,7 +15,6 @@ export const CuadroTexto = {
     opacity: '0.6',
     border: 'solid 3px white',
     backgroundColor: 'black',
-
-}
+};
 
 export default CuadroTexto;

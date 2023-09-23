@@ -1,5 +1,4 @@
 export const RegistroStyle = {
-
     top: '550px',
     display: 'flex',
     justifyContent: 'center',
@@ -10,9 +9,6 @@ export const RegistroStyle = {
     fontSize: '15px',
     left: '190px',
     fontWeight: 'bold',
-
-
-}
-
+};
 
 export default RegistroStyle;

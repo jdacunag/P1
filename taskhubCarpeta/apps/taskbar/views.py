@@ -8,7 +8,6 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import json
-from rest_framework.authtoken.models import Token
 def pruebametod(request):
     return render(request, 'prueba.html')
 

@@ -1,5 +1,4 @@
 export const BotonUsuario = {
-
     top: '250px',
     display: 'flex',
     justifyContent: 'center',
@@ -14,7 +13,6 @@ export const BotonUsuario = {
     fontSize: '30px',
     fontWeight: 'bold',
     left: '250px',
-
-}
+};
 
 export default BotonUsuario;
