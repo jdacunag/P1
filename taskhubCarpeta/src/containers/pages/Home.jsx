@@ -9,10 +9,8 @@ import titulo2 from '../../components/Home/Titulo2';
 import { useSession } from '../../hooks/useSession';
 import { useNavigate, Link } from 'react-router-dom';
 
-
-
 function Home() {
-    const { userId, setSecureid  } = useSession();
+    const { userId, setSecureid } = useSession();
 
     console.log(userId);
     return (
@@ -28,10 +26,10 @@ function Home() {
                 <div>
                     <div style={CuadroDeBotones}></div>
                     <Link to="/verproyectos" style={BotonVerProyectos}>
-                    Ver <br /> proyectos
+                        Ver <br /> proyectos
                     </Link>
                     <Link to="/nuevoproyecto" style={BotonNuevoProyecto}>
-                    Nuevo <br /> proyectos
+                        Nuevo <br /> proyectos
                     </Link>
                 </div>
             </div>

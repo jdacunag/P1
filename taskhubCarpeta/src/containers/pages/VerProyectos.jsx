@@ -3,11 +3,10 @@ import { ProjectsCard } from '../../components/proyectos/ProjectsCard';
 import { getAllProjects } from '../../api/projects.api';
 import { useSession } from '../../hooks/useSession';
 
-
 function VerProyectos() {
     const { userId } = useSession();
     const [projects, setTasks] = useState([]);
-    console.log(userId)
+    console.log(userId);
     useEffect(() => {
         async function loadProjects() {
             const res = await getAllProjects(userId);
