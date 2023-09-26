@@ -1,10 +1,8 @@
 export const BotonContraseña = {
-
-    top: '-60px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'relative',
+    position: 'absolute',
     color: 'black',
     fontFamily: 'sans-serif',
     fontSize: '10px',
@@ -13,8 +11,8 @@ export const BotonContraseña = {
     height: '100px',
     fontSize: '30px',
     fontWeight: 'bold',
-    right: '63px',
-
-}
+    left: '250px',
+    top: '350px',
+};
 
 export default BotonContraseña;

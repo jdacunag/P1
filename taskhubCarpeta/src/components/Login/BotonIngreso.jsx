@@ -1,25 +1,19 @@
-export const BotonIngreso ={
-
-    
-        
+export const BotonIngreso = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     height: '5vh',
-    position: 'relative',
-    top: '490px',
-    left: '1125px',
+    position: 'absolute',
+    top: '580px',
+    left: '175px',
     button: 'white',
     bottom: '10px',
     fontSize: '35px',
-    color : 'white',
+    color: 'white',
     width: '247.22px',
     fontWeight: 'bold',
     textShadow: '2px 2px 4px #000000', // Añade sombra al texto
     border: 'solid 2px white',
-        
-    
-    
-}
+};
 
 export default BotonIngreso;
