@@ -6,7 +6,7 @@ export const BotonNuevoProyecto = {
     position: 'relative',
     top: '354px',
     fontSize: '35px',
-    right: '180px',
+    right: '390px',
     button: 'white',
     bottom: '10px',
     fontWeight: 'bold',
