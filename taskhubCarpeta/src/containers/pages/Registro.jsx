@@ -1,17 +1,13 @@
 import CuadroTexto from '../../components/Registro/CuadroTexto';
-import Fondo from '../../components/Registro/Fondo';
-import BotonUsuario from '../../components/Registro/BotonUsuario';
+import Fondo from '../../components/generalidades/Fondo';
+import BotonUsuario from '../../components/generalidades/btnCampo';
 import BotonContraseña from '../../components/Registro/BotonContraseña';
-import BotonConfirmarContraseña from '../../components/Registro/BotonConfirmarContraseña';
-import BotonCorreo from '../../components/Registro/BotonCorreo';
-import Titulo from '../../components/Registro/Titulo';
-import BotonIngreso from '../../components/Registro/BotonIngreso';
+import LoginUser from '../../components/Login/LoginUser';
+import Titulo from '../../components/generalidades/Titleloginregister';
+import BotonIngreso from '../../components/generalidades/btnNext';
+import LoginPassword from '../../components/Login/LoginPassword';
 import { useForm } from 'react-hook-form';
 import { createUser } from '../../api/users.api';
-
-function iraRegistro() {
-    window.location.href = '/Registro';
-}
 
 function Registro() {
     const { register, handleSubmit } = useForm();
@@ -27,17 +23,23 @@ function Registro() {
                     <p>Registro</p>
                 </div>
                 <form onSubmit={onSubmit}>
-                    <div style={BotonCorreo}>
+                    <div style={{ ...BotonUsuario, top: '33%' }}>
                         <input
                             type="text"
                             p
                             placeholder="Email"
-                            name="password"
+                            name="email"
                             {...register('correo', { required: true })}
+                            style={LoginUser}
                         />
                     </div>
                     <div style={BotonUsuario}>
-                        <input placeholder="username" name="username" {...register('username', { required: true })} />
+                        <input
+                            placeholder="username"
+                            name="username"
+                            {...register('username', { required: true })}
+                            style={LoginUser}
+                        />
                     </div>
                     <div style={BotonContraseña}>
                         <input
@@ -45,6 +47,7 @@ function Registro() {
                             placeholder="password"
                             name="password"
                             {...register('password', { required: true })}
+                            style={LoginPassword}
                         />
                     </div>
                     <button style={BotonIngreso} type="submit">

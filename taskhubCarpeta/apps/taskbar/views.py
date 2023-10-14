@@ -39,10 +39,11 @@ def UserAuthentication(request):
         
         if user is not None:
             login(request, user)
-            return JsonResponse({'boolean': 'true',
-                                 "id": user.id})
+            return JsonResponse({"id": user.id})
         else:
-            return JsonResponse({'boolean': 'false'})
+            return None
     else:
         return JsonResponse({'mensaje': 'Método no permitido1'}, status=405)
+    
+    
 # Create your views here.

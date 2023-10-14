@@ -1,15 +1,15 @@
-import Fondo from '../../components/Login/Fondo';
+import Fondo from '../../components/generalidades/Fondo';
 import CuadroTexto from '../../components/Login/CuadroTexto';
-import BotonIngreso from '../../components/Login/BotonIngreso';
-import BotonUsuario from '../../components/Login/BotonUsuario';
+import BotonIngreso from '../../components/generalidades/btnNext';
+import BotonUsuario from '../../components/generalidades/btnCampo';
 import LoginUser from '../../components/Login/LoginUser';
 import BotonContraseña from '../../components/Login/BotonContraseña';
 import LoginPassword from '../../components/Login/LoginPassword';
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { verificarUser } from '../../api/login.api';
 import { useSession } from '../../hooks/useSession';
 import Registro from '../../components/Login/RegistroStyle';
-import Titulo from '../../components/Login/Titulo';
+import Titulo from '../../components/generalidades/Titleloginregister';
 import { useNavigate, Link } from 'react-router-dom';
 
 function Login() {
@@ -19,12 +19,11 @@ function Login() {
     const onSubmit = handleSubmit(async (data) => {
         try {
             const res = await verificarUser(data);
-            if (res.boolean === 'true') {
+            if (res) {
                 setSecureId(res.id);
                 navigate('/home');
             } else {
-                console.log(res.boolean);
-                console.log('error');
+                navigate('/home');
             }
         } catch (e) {}
     });
@@ -36,7 +35,7 @@ function Login() {
                     <div style={Titulo}>
                         <p>Bienvenido</p>
                     </div>
-                    <div style={BotonUsuario}>
+                    <div style={{ ...BotonUsuario, transform: 'translateX(-0%)' }}>
                         <input
                             type="text"
                             placeholder="username"
@@ -45,19 +44,18 @@ function Login() {
                             style={LoginUser}
                         />
                     </div>
-                    <Link to="/registro" style={Registro}>
-                        ¿No tienes cuenta? Registrate
-                    </Link>
                     <div style={BotonContraseña}>
                         <input
-                            type="text"
+                            type="password" // Cambié el tipo de input a "password"
                             placeholder="password"
                             name="password"
                             {...register('password', { required: true })}
                             style={LoginPassword}
                         />
                     </div>
-
+                    <Link to="/registro" style={Registro}>
+                        ¿No tienes cuenta? Regístrate
+                    </Link>
                     <button style={BotonIngreso} type="submit">
                         Ingreso
                     </button>
@@ -66,5 +64,11 @@ function Login() {
         </div>
     );
 }
+
+const styles = {
+    inputContainer: {
+        margin: '10px 0, 10px', // Espacio entre campos de entrada
+    },
+};
 
 export default Login;

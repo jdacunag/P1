@@ -5,14 +5,14 @@ export const BotonContraseña = {
     position: 'absolute',
     color: 'black',
     fontFamily: 'sans-serif',
-    fontSize: '10px',
+    fontSize: '20px',
     borderRadius: '30px',
-    width: '100px',
-    height: '100px',
-    fontSize: '25px',
+    width: '80px',
+    height: '64px',
     fontWeight: 'bold',
-    left: '250px',
-    top: '350px',
+    left: 'calc(50%)',
+    top: '55%',
+    backgroundColor: 'white',
+    transform: 'translateX(-50%)',
 };
-
 export default BotonContraseña;
