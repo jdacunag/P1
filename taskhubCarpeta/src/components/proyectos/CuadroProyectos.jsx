@@ -1,4 +1,4 @@
-export const Cuadro = {
+export const CuadroProyectos = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -18,4 +18,4 @@ export const Cuadro = {
     backgroundColor: 'black',
 };
 
-export default Cuadro;
+export default CuadroProyectos;

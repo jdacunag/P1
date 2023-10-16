@@ -4,8 +4,9 @@ import CuadroDescripcion from '../../components/NuevoProyecto/CuadroDescripcion'
 import Fondo from '../../components/generalidades/Fondo';
 import { useForm } from 'react-hook-form';
 import { createProject } from '../../api/projects.api';
-import btnNombre from '../../components/Registro/BotonContraseña';
 import { useSession } from '../../hooks/useSession';
+import { BotonUsuario } from '../../components/generalidades/btnCampo'
+import LoginUser from '../../components/Login/LoginUser';
 
 const Titulo = {
     textAlign: 'center',
@@ -32,18 +33,23 @@ function NuevoProyecto() {
     return (
         <div style={Fondo}>
             <div style={Cuadro}>
-                <div style={Titulo}>
+                <div style={{...Titulo, top:'2.5%'}}>
                     <h1>Crear Nuevo Proyecto</h1>
+                    </div>
                     <form onSubmit={onSubmit}>
+                        <div style={{...BotonUsuario, top:'20%'}}>
                         <input
                             placeholder="Nombre del proyecto"
                             name="nombre"
                             {...register('nombre', { required: true })}
+                            style={LoginUser}
                         />
+                        </div>
                         <textarea
                             id="Descripcion"
                             name="descripcion"
-                            style={{ ...CuadroDescripcion, display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
+                            style={CuadroDescripcion}
+                            placeholder="Descripción"
                             {...register('descripcion', { required: true })}
                         />
 
@@ -52,7 +58,7 @@ function NuevoProyecto() {
                             Crear{' '}
                         </button>
                     </form>
-                </div>
+          
             </div>
         </div>
     );

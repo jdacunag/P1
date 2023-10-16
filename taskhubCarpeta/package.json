@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@coreui/react": "^4.10.1",
         "@headlessui/react": "^1.7.4",
         "@heroicons/react": "^2.0.13",
         "@itseasy21/react-elastic-carousel": "^0.12.3",

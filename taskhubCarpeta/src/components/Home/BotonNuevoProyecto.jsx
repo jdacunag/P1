@@ -3,13 +3,14 @@ export const BotonNuevoProyecto = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '5vh',
-    position: 'relative',
-    top: '50%',
-    fontSize: '35px',
-    right: '30%',
+    position: 'absolute',
+    top: 'calc(50% - 40px)',
+    left: 'calc(55% - 40px)',
+    fontSize: '2.5vw',
     button: 'white',
     bottom: '10px',
     fontWeight: 'bold',
+    width: '25%',
     color: 'white',
 };
 

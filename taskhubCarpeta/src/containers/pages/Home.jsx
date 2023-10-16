@@ -18,11 +18,13 @@ function Home() {
     return (
         <div style={Fondo}>
             <div style={titulo}>
-                {userId ? <p>hola | Nombre | </p> : <p> colado socio </p>}
-                <p>Bienvenido a</p>
+                <p style={titulo2}>Bienvenido a TaskHub ¿Que deseas hacer hoy?
                 <br />
-                <p style={titulo2}>TaskHub</p>
-                <p>¿Que deseas hacer hoy?</p>
+                {userId ? <p>hola | Nombre | </p> : <p> colado socio </p>}
+                <br />
+                </p>
+                
+              
             </div>
             <div style={CuadroDeBotones}></div>
             <Link to="/verproyectos" style={BotonVerProyectos}>
