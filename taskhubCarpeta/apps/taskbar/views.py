@@ -14,6 +14,12 @@ def pruebametod(request):
 class vistaTask(viewsets.ModelViewSet):
     serializer_class = serializer
     queryset = tasks.objects.all()
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        proyecto = self.request.query_params.get('proyecto', None)
+        if proyecto:
+            queryset = queryset.filter(proyecto=proyecto)
+        return queryset
 class vistaProject(viewsets.ModelViewSet):
     serializer_class = serializerProyecto
     queryset = Proyecto.objects.all()
