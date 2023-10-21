@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import ReactImg from 'C:/Users/david/OneDrive/Escritorio/p1.v2/taskhubCarpeta/src/components/Home/Piramide.jpg';
 import { getAllProjects } from '../../api/projects.api';
 import { useSession } from '../../hooks/useSession';
 import { useProject } from '../../hooks/useProject';
@@ -49,7 +48,7 @@ function VerProyectos() {
             <div style={containerStyle}>
                 {projects.map((Proyecto) => (
                         <CCard style={{ width: '12vh' }}>
-                        <CCardImage orientation="top" src={ReactImg} />
+                        
                         <CCardBody>
                           <CCardTitle>{ Proyecto.nombre }</CCardTitle>
                           <CCardText>
