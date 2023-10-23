@@ -7,6 +7,7 @@ import { createProject } from '../../api/projects.api';
 import { useSession } from '../../hooks/useSession';
 import { BotonUsuario } from '../../components/generalidades/btnCampo'
 import LoginUser from '../../components/Login/LoginUser';
+import { Usenavigate, useNavigate } from 'react-router-dom';
 
 const Titulo = {
     textAlign: 'center',
@@ -23,12 +24,16 @@ const Titulo = {
 
 function NuevoProyecto() {
     const { userId } = useSession();
+    const  navigate = useNavigate();
     const { register, handleSubmit } = useForm();
     const data = null;
     const onSubmit = handleSubmit((data) => {
         data = Object.assign({}, data, { usuario: userId });
         console.log(data);
-        createProject(data);
+        const res =  createProject(data);
+        if(res){
+            navigate('/home')
+        }
     });
     return (
         <div style={Fondo}>
