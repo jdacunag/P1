@@ -3,15 +3,17 @@ export const BotonVerProyectos = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '5vh',
+    height: '25%',
     position: 'absolute',
-    left: 'calc(25% - 40px)',
-    top: 'calc(50% - 40px)',
+    left: 'calc(38% - 40px)',
+    top: 'calc(45% - 40px)',
     button: 'white',
     bottom: '10px',
-    fontSize: '2.5vw',
+    fontSize: '1.5vw',
     color: 'white',
-    width: '25%',
+    width: '10%',
     fontWeight: 'bold',
+    zIndex: '1',
 };
 
 export default BotonVerProyectos;

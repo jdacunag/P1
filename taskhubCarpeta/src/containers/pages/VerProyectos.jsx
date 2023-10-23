@@ -50,7 +50,7 @@ function VerProyectos() {
                         <CCard style={{ width: '12vh' }}>
                         
                         <CCardBody>
-                          <CCardTitle>{ Proyecto.nombre }</CCardTitle>
+                          <CCardTitle >{ Proyecto.nombre }</CCardTitle>
                           <CCardText>
                             { Proyecto.descripcion}
                           </CCardText>

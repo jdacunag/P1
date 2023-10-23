@@ -2,9 +2,10 @@ export const CentrarTexto = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '40vh',
+    height: '5vh',
     position: 'relative',
-    left: '300px',
+    right: 'calc(2% - 40px)',
+    top: 'calc(5% - 40px)',
 };
 
 export default CentrarTexto;
