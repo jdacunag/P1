@@ -10,7 +10,7 @@ export const CuadroDeBotones = {
   // Reemplaza con la ruta de tu imagen
     borderRadius: '20px',
     maxWidth: '40%',
-    height: '500px',
+    height: '50vh',
     fontSize: '20px',
     fontWeight: 'bold',
     textShadow: '2px 2px 4px #000000', // Añade sombra al texto

@@ -8,12 +8,22 @@ import BotonIngreso from '../../components/generalidades/btnNext';
 import LoginPassword from '../../components/Login/LoginPassword';
 import { useForm } from 'react-hook-form';
 import { createUser } from '../../api/users.api';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Registro() {
     const { register, handleSubmit } = useForm();
+    const [error, setError] = useState(null);
+    const navigate  = useNavigate();
+    const onSubmit = handleSubmit(async (data) => {
 
-    const onSubmit = handleSubmit((data) => {
-        createUser(data);
+        try{
+        await createUser(data);
+        navigate('/');
+        }catch{
+            setError("no se pudo crear el Usuario, por favor cambie los datos");
+        }
+        
     });
 
     return (
@@ -54,6 +64,7 @@ function Registro() {
                         Siguiente
                     </button>
                 </form>
+                {error  && <div style={{ color: 'red', fontSize:'11.5px' }}>{error }</div>}
             </div>
         </div>
     );
