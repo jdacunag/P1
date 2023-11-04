@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Error404 from './containers/errors/Error404';
 import Home from './containers/pages/Home';
-import TaskList from './components/TaskList';
 import VerProyectos from './containers/pages/VerProyectos';
 import NuevoProyecto from './containers/pages/NuevoProyecto';
 import Login from './containers/pages/Login';
@@ -17,7 +16,6 @@ function App() {
             <Router>
                 <Routes>
                     <Route path="*" element={<Error404 />} />
-                    <Route path="/tasks" element={<TaskList />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/nuevoproyecto" element={<NuevoProyecto />} />
                     <Route path="/" element={<Login />} />
