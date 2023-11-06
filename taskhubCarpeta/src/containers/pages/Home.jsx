@@ -21,7 +21,7 @@ function Home() {
             <div style={titulo}>
                 <p style={titulo2}>Bienvenido a TaskHub ¿Que deseas hacer hoy?
                 <br />
-                {userId ? <p>hola | Nombre | </p> : <p> colado socio </p>}
+                {userId ? <p>hola | Nombre | </p> : <p> Usuario </p>}
                 <br />
                 </p>
               </div>  

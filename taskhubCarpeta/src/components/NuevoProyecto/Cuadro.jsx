@@ -9,7 +9,8 @@ export const Cuadro = {
     transform: 'translate(-50%, -50%)',
     borderRadius: '20px',
     maxWidth: '65%',
-    height: '750px',
+    height: '700px',
+    width: '60%',
     fontSize: '20px',
     fontWeight: 'bold',
     textShadow: '2px 2px 4px #000000', // Añade sombra al texto

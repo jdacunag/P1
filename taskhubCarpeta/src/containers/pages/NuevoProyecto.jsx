@@ -47,7 +47,7 @@ function NuevoProyecto() {
                             placeholder="Nombre del proyecto"
                             name="nombre"
                             {...register('nombre', { required: true })}
-                            style={LoginUser}
+                            style={{LoginUser, maxWidth:'500px', width:'500vh', fontSize: '40px', borderRadius:'5px', textAlign:'center'}}
                         />
                         </div>
                         <textarea
