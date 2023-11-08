@@ -11,6 +11,7 @@ import { useSession } from '../../hooks/useSession';
 import Registro from '../../components/Login/RegistroStyle';
 import Titulo from '../../components/generalidades/Titleloginregister';
 import { useNavigate, Link } from 'react-router-dom';
+import CentrarTexto from '../../components/Home/CentrarTexto';
 
 function Login() {
     const { setSecureId } = useSession();
@@ -30,8 +31,11 @@ function Login() {
 
     return (
         <div style={Fondo}>
+            <div stlye={{...CentrarTexto}}>  
+              <img src="https://cdn.discordapp.com/attachments/726318204397420565/1165829412214808626/image.png?ex=655abb3f&is=6548463f&hm=3a91b74dd93efc21e53a164c3a5be1a166d5c3564ac81592eaa38bd9a48af1dd&" style={{ width: '50vh', height: 'auto', marginLeft: '10.5%', transform: 'translate(95%, 130%)' }} />
+            </div>
             <form onSubmit={onSubmit}>
-                <div style={CuadroTexto}>
+                <div style={{...CuadroTexto, }}>
                     <div style={Titulo}>
                         <p>Bienvenido</p>
                     </div>
