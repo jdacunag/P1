@@ -18,6 +18,7 @@ function Login() {
     const navigate = useNavigate();
     const onSubmit = handleSubmit(async (data) => {
         try {
+            console.log(data)
             const res = await verificarUser(data);
             if (res) {
                 setSecureId(res.id);

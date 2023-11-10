@@ -9,11 +9,12 @@ export function ProjectIdProvider({ children }) {
         setProjectId(id);
     });
 
-    return <ProjectSessionContext.Provider value={{ ProjectId, setSecureId }}>{children}</ProjectSessionContext.Provider>;
+    return (
+        <ProjectSessionContext.Provider value={{ ProjectId, setSecureId }}>{children}</ProjectSessionContext.Provider>
+    );
 }
 
 export function useProject() {
- 
     const context = useContext(ProjectSessionContext);
     if (!context) {
         throw new Error('useSession debe usarse dentro de un UserIdProvider');

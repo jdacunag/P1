@@ -7,7 +7,7 @@ export const CuadroDeBotones = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     color: 'white',
-  // Reemplaza con la ruta de tu imagen
+    // Reemplaza con la ruta de tu imagen
     borderRadius: '20px',
     maxWidth: '40%',
     height: '50vh',

@@ -5,7 +5,6 @@ const usersVApi = axios.create({
 });
 
 export const verificarUser = async (data) => {
-    console.log(data);
     return usersVApi
         .post('/', data)
         .then((response) => {

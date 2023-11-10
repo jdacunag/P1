@@ -43,7 +43,7 @@ class Proyecto(models.Model):
     usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
-    
+    img = models.TextField()
     def __str__(self):
         return self.nombre
 
