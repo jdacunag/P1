@@ -1,0 +1,19 @@
+.button {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    background-color: #8d97db;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #fafafa;
+    cursor: pointer;
+    box-shadow:
+        0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
