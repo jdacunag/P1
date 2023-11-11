@@ -1,0 +1,44 @@
+.input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;
+    font-size: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type='file'].input {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+input[type='file'].input::-webkit-file-upload-button {
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    background-color: #8d97db;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #fafafa;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.filecontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fileimage {
+    width: 100%;
+    border: solid #8d97db 2px;
+    border-radius: 8px;
+}
