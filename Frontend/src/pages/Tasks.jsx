@@ -7,6 +7,8 @@ import Title from '../components/title';
 import useSession from '../hooks/useSession';
 import * as tasksapi from '../services/tasks';
 import style from './Task.module.css';
+import TaskhubLogo from '../images/TaskhubLogo.png';
+
 export default function tasks() {
     const [location, setLocation] = useLocation();
     const [tasks, setTasks] = useState([]);
@@ -55,6 +57,8 @@ export default function tasks() {
                     <FontAwesomeIcon icon={faPlus} color="black" size="5x" />
                 </button>
             </div>
+            <div>
+             <img className={style.Logo} src={TaskhubLogo} />
             <div className={style.tasksContainer}>
             <div className={style.tasks}>
                 {tasks.map((task) => (
@@ -79,6 +83,8 @@ export default function tasks() {
                 ))}
                 </div>
             </div>
+            </div>
         </div>
     );
 }
+//hola

@@ -49,3 +49,9 @@
         gap: 20px;
     }
 }
+
+.Logo {
+    max-width: 480px;
+    width: 100%;
+    margin: -300px 5px 10px 650px;
+}
