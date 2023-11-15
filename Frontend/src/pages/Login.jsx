@@ -13,10 +13,13 @@ import style from './Login.module.css';
 import TaskhubLogo from '../images/TaskhubLogo.png';
 
 export default function Login() {
+    sessionStorage.removeItem('userId');
+    
     const [, setLocation] = useLocation();
     const usernameRef = useRef(null);
     const passwordRef = useRef(null);
     const { createSession } = useSession();
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -59,7 +62,7 @@ export default function Login() {
                             Login
                         </Button>
 
-                        <Link href="/register">I dont have an account</Link>
+                        <Link href="/register">I do not have an account</Link>
                     </form>
                 </Card>
             </div>

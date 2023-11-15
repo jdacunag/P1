@@ -11,24 +11,27 @@ import TaskhubLogo from '../images/TaskhubLogo.png';
 
 export default function Projects() {
     const [, setLocation] = useLocation();
+    
     const { userId } = useSession();
     const [projects, setProjects] = useState([]);
-
+    setTimeout(1);
+    const ps  = sessionStorage.getItem("userId");
     useEffect(() => {
+        console.log(userId)
         if (!userId) {
             setLocation('/login');
             return;
         }
-
         (async () => {
             try {
-                const projectList = await projectApi.getAll(userId);
+                
+                const projectList = await projectApi.getAll(ps);
                 setProjects(projectList);
             } catch (error) {
                 alert(error.message);
             }
         })();
-    }, [userId, setLocation]);
+    }, [userId, setLocation, ps]);
 
     const handleClick = (e, projectId) => {
         e.stopPropagation();

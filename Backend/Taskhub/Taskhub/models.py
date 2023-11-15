@@ -6,7 +6,7 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 
-# Create your models here.
+
 
 
 class UsuarioManager(BaseUserManager):
@@ -48,12 +48,26 @@ class usuario(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.username
 
+class RolProyecto(models.Model):
+    Nombre_roles = (
+        ('member', 'member'),
+        ('leader', 'leader'),
+        ('expecter', 'expecter')
+    )
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    Proyecto = models.ForeignKey('Proyecto', on_delete=models.CASCADE)
+    rol = models.CharField(max_length=20, choices=Nombre_roles, default='member')
+
+
+
 
 class Proyecto(models.Model):
-    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE)
+    usuarios = models.ManyToManyField(usuario, through='RolProyecto', related_name='proyectos_asociados' )
+    usuario = models.ForeignKey(usuario, on_delete=models.CASCADE, related_name='proyecto_creador')
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField()
     img = models.TextField()
+    
 
     def __str__(self):
         return self.nombre
@@ -73,3 +87,4 @@ class tasks(models.Model):
 
     def __str__(self):
         return self.nombre
+
