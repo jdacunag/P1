@@ -7,6 +7,8 @@ import Title from '../components/title';
 import useSession from '../hooks/useSession';
 import * as tasksapi from '../services/tasks';
 import style from './Task.module.css';
+import ColumnTask from '../components/ColumnTask';
+
 export default function tasks() {
     const [location, setLocation] = useLocation();
     const [tasks, setTasks] = useState([]);
@@ -21,6 +23,7 @@ export default function tasks() {
 
         (async () => {
             try {
+                console.log(projectId)
                 const projectList = await tasksapi.getAll(projectId);
                 setTasks(projectList);
             } catch (error) {
@@ -29,7 +32,7 @@ export default function tasks() {
         })();
     }, [userId, setLocation]);
     const  handleCreate = async () => {
-        const taskId = await tasksapi.createProject(userId);
+        const taskId = await tasksapi.createTask(projectId);
         //setLocation(`/projects/${projectId}/${taskId}/create`);
     };
 
@@ -49,34 +52,21 @@ export default function tasks() {
     };
     return (
         <div className={style.container}>
-            <Title white>Tasks </Title>
+            <Title white> Tasks </Title>
             <div>
                 <button type="button" onClick={(e) => handleCreate()} className={style.button}>
                     <FontAwesomeIcon icon={faPlus} color="black" size="5x" />
                 </button>
             </div>
-            <div className={style.tasksContainer}>
-            <div className={style.tasks}>
-                {tasks.map((task) => (
-                    <Card>
-                        <div className={style.panel}>
-                            <h3 className={style.title}>{task.nombre}</h3>
-
-                            <p>{task.description}</p>
-                            <p>{task.fecha_vencimento}</p>
-                            <p>{task.estado}</p>
-                            <p>{task.id}</p>
-                        </div>
-                        <div className={style.panel}>
-                            <button type="button" onClick={(e) => handleEdit(e, task.id)} className={style.button}>
-                                <FontAwesomeIcon icon={faFilePen} color="gray" size="xl" />
-                            </button>
-                            <button type="button" onClick={(e) => handleDelete(e, task.id)} className={style.button}>
-                                <FontAwesomeIcon icon={faTrashCan} color="red" size="x1" />
-                            </button>
-                        </div>
-                    </Card>
-                ))}
+            <div className={style.container}>
+                <div className={style.Column}>
+                <ColumnTask tasks={tasks} status='ToDo'></ColumnTask>
+                </div>
+                <div className={style.Column}>
+                <ColumnTask tasks={tasks} status='Doing'></ColumnTask>
+                </div>
+                <div className={style.Column}>
+                <ColumnTask tasks={tasks} status='Done'></ColumnTask>
                 </div>
             </div>
         </div>
