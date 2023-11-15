@@ -11,9 +11,9 @@ export async function getAll(tasksId) {
 }
 
 
-export async function deleteById(taskstId) {
+export async function deleteById(tasksId) {
     try {
-        await axios.delete(`/api/v1/tasks/${taskstId}/`);
+        await axios.delete(`/api/v1/tasks/${tasksId}/`);
     } catch (error) {
         if (error.response) throw new Error('The tasks could not be deleted');
         throw new Error('Something went wrong');
