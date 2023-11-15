@@ -21,3 +21,7 @@ export async function create(username, email, password) {
         throw new Error('Something went wrong');
     }
 }
+export async function getAll() {
+    const res = await axios.get('/api/v1/users/');
+    return res;
+}

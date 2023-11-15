@@ -11,7 +11,7 @@ export default function ColumnTask({ tasks, status, handleEdit, handleDelete }) 
     return (
         <div className={style.Column}>
             <div className={style.title}>
-            <Title >{status}</Title>
+            <Title white>{status}</Title>
             </div>
             <div className={style.projects}>
                 

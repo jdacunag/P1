@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'wouter';
 import Title from '../components/title';
 import useSession from '../hooks/useSession';
 import * as tasksapi from '../services/tasks';
+import * as projectApi from '../services/project';
 import style from './Task.module.css';
 import ColumnTask from '../components/ColumnTask';
 
@@ -35,7 +36,9 @@ export default function tasks() {
         const taskId = await tasksapi.createTask(projectId);
         //setLocation(`/projects/${projectId}/${taskId}/create`);
     };
-
+    const handleInvite =  (projectId) => {
+         projectApi.
+    }
     const handleEdit = (e, tasksId) => {
         e.stopPropagation();
         setLocation(`/projects/${projectId}/edit/${tasksId}`);
@@ -52,13 +55,19 @@ export default function tasks() {
     };
     return (
         <div className={style.container}>
-            <Title white> Tasks </Title>
             <div>
+            <Title white> Tasks </Title>
+            <div className={style.buttonC}>
                 <button type="button" onClick={() => handleCreate()} className={style.button}>
-                    <FontAwesomeIcon icon={faPlus} color="black" size="5x" />
+                    <FontAwesomeIcon icon={faPlus} color="black" size="3x" />
                 </button>
             </div>
-            <div className={style.container}>
+            <div>
+            <button type="button"  className={style.button}>
+                    <FontAwesomeIcon icon={faUserPlus} color="black" size="3x" />
+            </button>
+            </div>
+            </div>
                 <div className={style.Column}>
                 <ColumnTask tasks={tasks} status='ToDo' handleEdit={handleEdit} handleDelete={handleDelete}></ColumnTask>
                 </div>
@@ -68,7 +77,6 @@ export default function tasks() {
                 <div className={style.Column}>
                 <ColumnTask tasks={tasks} status='Done' handleEdit={handleEdit} handleDelete={handleDelete}></ColumnTask>
                 </div>
-            </div>
             </div>
     );
 }

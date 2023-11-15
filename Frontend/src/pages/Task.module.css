@@ -17,6 +17,7 @@
     align-items: center;
     gap: 20px;
 }
+
 .button {
     height: 60px;
     width: 60px;
@@ -24,20 +25,22 @@
     outline: none;
     background-color: transparent;
     cursor: pointer;
+    align-items: center;
 }
 .tasksContainer {
     width: 100%;
     display: inline-block;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
+}
 
-.Column{
+.Column {
+    text-align: center;
     width: 700px;
     background-color: transparent;
     overflow: hidden;
-    background-color: #fafafa;
     border-radius: 10px;
+    border-color: white;
     box-shadow:
         0 10px 15px -3px rgb(0 0 0 / 0.1),
         0 4px 6px -4px rgb(0 0 0 / 0.1);
