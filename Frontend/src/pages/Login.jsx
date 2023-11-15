@@ -10,6 +10,7 @@ import Title from '../components/title';
 import useSession from '../hooks/useSession';
 import * as userApi from '../services/user';
 import style from './Login.module.css';
+import TaskhubLogo from '../images/TaskhubLogo.png';
 
 export default function Login() {
     const [, setLocation] = useLocation();
@@ -36,9 +37,17 @@ export default function Login() {
 
     return (
         <div className={style.container}>
+
             <div className={style.card}>
+                <div className={style.logo}>
+                    <img src={TaskhubLogo} />
+                </div>
                 <Card>
                     <form className={style.form} onSubmit={handleSubmit}>
+
+
+
+
                         <div className={style.brand}>
                             <FontAwesomeIcon icon={faUser} size="3x" />
                             <Title>Login</Title>
