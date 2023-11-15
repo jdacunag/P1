@@ -7,6 +7,7 @@ import Title from '../components/title';
 import useSession from '../hooks/useSession';
 import * as projectApi from '../services/project';
 import style from './Projects.module.css';
+import TaskhubLogo from '../images/TaskhubLogo.png';
 
 export default function Projects() {
     const [, setLocation] = useLocation();
@@ -57,12 +58,16 @@ export default function Projects() {
 
     return (
         <div className={style.container}>
+            
             <Title white>Projects </Title>
+            
             <div>
                 <button type="button" onClick={(e) => handleCreate()} className={style.button}>
                     <FontAwesomeIcon icon={faPlus} color="black" size="5x" />
                 </button>
             </div>
+            <div >
+             <img className={style.Logo} src={TaskhubLogo} />
             <div className={style.projects}>
                 {projects.map((project) => (
                     <Card key={project.id} onClick={(e) => handleClick(e, project.id)}>
@@ -79,6 +84,8 @@ export default function Projects() {
                     </Card>
                 ))}
             </div>
+            </div>
         </div>
+
     );
 }

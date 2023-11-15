@@ -69,6 +69,7 @@ export default function tasks() {
                 <ColumnTask tasks={tasks} status='Done'></ColumnTask>
                 </div>
             </div>
-        </div>
+            </div>
     );
 }
+//hola
