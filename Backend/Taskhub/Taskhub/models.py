@@ -34,12 +34,11 @@ class usuario(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=50, unique=True)
     correo = models.EmailField(max_length=50, unique=True)
     objects = UsuarioManager()
-    # Otros campos personalizados de tu modelo si los tienes
     is_active = True
     USERNAME_FIELD = "username"
     REQUIRED_FIELDS = ["correo"]
 
-    # Definición del administrador personalizado
+
     def natural_key(self):
         return self.username
 
@@ -65,13 +64,12 @@ class tasks(models.Model):
         verbose_name = "task"
         verbose_name_plural = "tasks"
 
-    nombre = models.CharField(max_length=100, unique=True)
+    nombre = models.CharField(max_length=100)
     description = models.TextField()
     proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_vencimento = models.DateTimeField(null=True, blank=True)
-    slug = models.SlugField(max_length=255, unique=True)
-    estado = models.CharField(max_length=20, default="pendiente")
+    estado = models.CharField(max_length=20, default="ToDo")
 
     def __str__(self):
         return self.nombre

@@ -4,7 +4,6 @@
     margin: 0 auto;
     padding: 50px;
     display: flex;
-    flex-direction: column;
     gap: 30px;
 }
 .tasks {
@@ -27,7 +26,19 @@
     cursor: pointer;
 }
 .tasksContainer {
-    display: flex;
+    width: 100%;
+    display: inline-block;
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
+.Column{
+    width: 700px;
+    background-color: transparent;
+    overflow: hidden;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow:
+        0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
