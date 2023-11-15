@@ -38,10 +38,10 @@ export default function Login() {
     return (
         <div className={style.container}>
 
-            <div className={style.card}>
-                <div className={style.logo}>
-                    <img src={TaskhubLogo} />
-                </div>
+            <div >
+
+                <img className={style.Logo} src={TaskhubLogo} />
+
                 <Card>
                     <form className={style.form} onSubmit={handleSubmit}>
 
