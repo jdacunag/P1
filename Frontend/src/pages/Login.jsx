@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useLocation } from 'wouter';
 import Card from '../components/Card';
 import Link from '../components/Link';
-import Button from '../components/button';
+import Button from '../components/Button';
 import Input from '../components/input';
 import Title from '../components/title';
 import useSession from '../hooks/useSession';

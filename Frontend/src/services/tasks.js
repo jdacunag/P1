@@ -23,9 +23,7 @@ export async function deleteById(tasksId) {
 
 export async function createTask(projectId) {
     try {
-        var slug = Math.floor(Math.random() * 10000000) + 1
-        slug = slug.toString()
-        const body = { nombre: "default"+slug, description: "default", fecha_vencimiento: "2100-1-1", estado: "Doing", slug: slug,
+        const body = { nombre: "default", description: "default", fecha_vencimiento: "2100-1-1", estado: "ToDo",
         proyecto: projectId }
         console.log(body)
         const res = await axios.post(`/api/v1/tasks/`, body)
@@ -36,5 +34,48 @@ export async function createTask(projectId) {
         //if (error.response) throw new Error('The project could not be created');
         //throw new Error('Something went wrong');
         throw Error(error)
+    }
+}
+
+export async function editById(projectId, tasksId, nombre, description, fecha, estado) {
+    try {
+        const body = {};
+
+        // Verificar y agregar propiedades no vacías al body
+        if (nombre) {
+            body.nombre = nombre;
+            console.log(nombre)
+        }
+
+        if (projectId) {
+            body.proyecto = projectId;
+        }
+
+        if (description) {
+            body.description = description;
+        }
+
+        if (fecha) {
+            body.Fechavencimento = fecha;
+        }
+
+        if (estado) {
+            body.estado = estado;
+        }
+
+        console.log(body);
+
+        // Verificar si el body no está vacío antes de hacer la solicitud PATCH
+        if (Object.keys(body).length > 0) {
+            await axios.patch(`/api/v1/tasks/${tasksId}/`, body);
+        } else {
+            console.log('No hay propiedades para actualizar.');
+        }
+    } catch (error) {
+        if (error.response) {
+            throw new Error('The task could not be edited');
+        } else {
+            throw new Error('Something went wrong');
+        }
     }
 }

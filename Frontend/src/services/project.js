@@ -8,6 +8,14 @@ export async function getAll(userId) {
         if (error.response) throw new Error('Projects could not be listed');
     }
 }
+export async function getByID(projectId) {
+    try {
+        const response = await axios.get(`/api/v1/projects/${projectId}/`);
+        return response.data;
+    } catch (error) {
+        if (error.response) throw new Error('Projects could not be listed');
+    }
+}
 
 export async function deleteById(projectId) {
     try {
@@ -20,13 +28,40 @@ export async function deleteById(projectId) {
 
 export async function editById(projectId, title, description, image, userId) {
     try {
-        const body = { nombre: title, img: image, descripcion: description, usuario: userId };
-        await axios.put(`/api/v1/projects/${projectId}/`, body);
+        const body = {};
+
+        // Verificar y agregar propiedades no vacías al body
+        if (title) {
+            body.nombre = title;
+        }
+
+        if (description) {
+            body.descripcion = description;
+        }
+
+        if (image) {
+            body.img = image;
+        }
+
+        if (userId) {
+            body.usuario = userId;
+        }
+
+        // Verificar si el body no está vacío antes de hacer la solicitud PUT
+        if (Object.keys(body).length > 0) {
+            await axios.patch(`/api/v1/projects/${projectId}/`, body);
+        } else {
+            console.log('No hay propiedades para actualizar.');
+        }
     } catch (error) {
-        if (error.response) throw new Error('The project could not be created');
-        throw new Error('Something went wrong');
+        if (error.response) {
+            throw new Error('The project could not be created');
+        } else {
+            throw new Error('Something went wrong');
+        }
     }
 }
+
 
 export async function createProject(userId) {
     try {
