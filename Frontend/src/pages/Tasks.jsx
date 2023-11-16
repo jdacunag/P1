@@ -9,6 +9,7 @@ import * as tasksapi from '../services/tasks';
 import * as projectApi from '../services/project';
 import style from './Task.module.css';
 import ColumnTask from '../components/ColumnTask';
+import TaskhubLogo from '../images/TaskhubLogo.png';
 
 export default function tasks() {
     const [location, setLocation] = useLocation();
@@ -37,7 +38,7 @@ export default function tasks() {
         //setLocation(`/projects/${projectId}/${taskId}/create`);
     };
     const handleInvite =  (projectId) => {
-         projectApi.
+         
     }
     const handleEdit = (e, tasksId) => {
         e.stopPropagation();
@@ -61,6 +62,8 @@ export default function tasks() {
                 <button type="button" onClick={() => handleCreate()} className={style.button}>
                     <FontAwesomeIcon icon={faPlus} color="black" size="3x" />
                 </button>
+                <div >
+             <img className={style.Logo} src={TaskhubLogo} />
             </div>
             <div>
             <button type="button"  className={style.button}>
@@ -78,5 +81,6 @@ export default function tasks() {
                 <ColumnTask tasks={tasks} status='Done' handleEdit={handleEdit} handleDelete={handleDelete}></ColumnTask>
                 </div>
             </div>
-    );
+            </div> 
+    )
 }
