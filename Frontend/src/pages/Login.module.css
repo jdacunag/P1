@@ -27,3 +27,8 @@
     align-items: center;
     margin: 25px;
 }
+
+.Logo {
+    max-width: 380px;
+    width: 100%;
+}

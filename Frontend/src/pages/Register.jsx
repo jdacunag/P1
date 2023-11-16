@@ -4,11 +4,12 @@ import { useRef } from 'react';
 import { useLocation } from 'wouter';
 import Card from '../components/Card';
 import Link from '../components/Link';
-import Button from '../components/button';
+import Button from '../components/Button';
 import Input from '../components/input';
 import Title from '../components/title';
 import * as userApi from '../services/user';
 import style from './Register.module.css';
+import TaskhubLogo from '../images/TaskhubLogo.png';
 
 export default function Register() {
     const [, setLocation] = useLocation();
@@ -36,6 +37,7 @@ export default function Register() {
     return (
         <div className={style.container}>
             <div className={style.card}>
+                <img className={style.Logo} src={TaskhubLogo} />
                 <Card>
                     <form className={style.form} onSubmit={handleSubmit}>
                         <div className={style.brand}>

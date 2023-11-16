@@ -4,18 +4,22 @@ import { useRef } from 'react';
 import { useLocation } from 'wouter';
 import Card from '../components/Card';
 import Link from '../components/Link';
-import Button from '../components/button';
+import Button from '../components/Button';
 import Input from '../components/input';
 import Title from '../components/title';
 import useSession from '../hooks/useSession';
 import * as userApi from '../services/user';
 import style from './Login.module.css';
+import TaskhubLogo from '../images/TaskhubLogo.png';
 
 export default function Login() {
+    sessionStorage.removeItem('userId');
+    
     const [, setLocation] = useLocation();
     const usernameRef = useRef(null);
     const passwordRef = useRef(null);
     const { createSession } = useSession();
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,9 +40,17 @@ export default function Login() {
 
     return (
         <div className={style.container}>
-            <div className={style.card}>
+
+            <div >
+
+                <img className={style.Logo} src={TaskhubLogo} />
+
                 <Card>
                     <form className={style.form} onSubmit={handleSubmit}>
+
+
+
+
                         <div className={style.brand}>
                             <FontAwesomeIcon icon={faUser} size="3x" />
                             <Title>Login</Title>
@@ -50,7 +62,7 @@ export default function Login() {
                             Login
                         </Button>
 
-                        <Link href="/register">I dont have an account</Link>
+                        <Link href="/register">I do not have an account</Link>
                     </form>
                 </Card>
             </div>

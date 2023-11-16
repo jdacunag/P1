@@ -41,6 +41,17 @@ export default function Input({ inputRef, type, accept, placeholder, focus }) {
             </div>
         );
     }
+    if (type === 'select') {
+        return (
+            <div>
+                <select id="estado" ref={inputRef} className={style.select}>
+                    <option value="ToDo">ToDo</option>
+                    <option value="Doing">Doing</option>
+                    <option value="Done">Done</option>
+                </select>
+            </div>
+        );
+    }
 
     return <input ref={inputRef} type={type} placeholder={placeholder} autoFocus={focus} className={style.input} />;
 }

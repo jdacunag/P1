@@ -10,9 +10,11 @@ from .views import *
 routerTareas = routers.DefaultRouter()
 routerTareas.register(r"tasks", vistaTask, "tasks")
 routerProyectos = routers.DefaultRouter()
-routerProyectos.register(r"projects", vistaProject, "project")
+routerProyectos.register(r"projects", VistaProject, "project")
 routerUsuarios = routers.DefaultRouter()
 routerUsuarios.register(r"users", vistaUser, "users")
+routerAdd = routers.DefaultRouter()
+routerAdd.register(r'add', ProyectoAddUsuariosViewSet, basename = "add" )
 
 from django.contrib import admin
 from django.urls import path
@@ -24,6 +26,5 @@ urlpatterns = [
     path("api/v1/", include(routerProyectos.urls)),
     path("api/v1/", include(routerUsuarios.urls)),
     path("api/v1/User/", UserAuthentication, name="usersAuth"),
-    # path('tasks/',include('apps.taskbar.urls')),
-    # path('projects/', include('apps.taskbar.urls')),
+    path("api/v1/<int:proyecto_id>/", include(routerAdd.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
